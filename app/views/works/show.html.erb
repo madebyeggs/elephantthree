@@ -1,0 +1,73 @@
+<div class="canScroll">
+	<div class="workInfo">
+		<%= link_to '', works_path, :class => "closeIcon" %>
+		<h1 class="artistName titleSize1"><%= @work.brand_name %> "<%= @work.campaign_title %>"</h1>
+		<h3 class="projectSubtitle fixerSpace descriptionSize1 upcase"><%= @work.agency %></h3>
+		<h3 class="projectSubtitle spacer descriptionSize1 upcase italics">
+			<em>MUSIC - </em>"<%= @work.track_name %>" by <%= @work.artist_name %>
+		</h3>
+		<div class="links">
+			<input id="twitter" type="hidden" 
+				data-url="<%= @currentUrl %>"
+				data-media="<%= @work.fb_image %>"
+				data-description="Elephant Music | NEW WORK: for <%= @work.brand_name %>" 
+				data-via="Elephant__Music"
+				data-related="Elephant__Music"   
+				class="socialLinksHidden"
+			>
+			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
+			<a class="fa fa-facebook socialLinks" href="javascript:workDialog.open()"></a>
+			<input id="googleplus" type="hidden" 
+				data-url="https://vimeo.com/<%= @work.vimeo %>"
+				data-media="<%= @work.fb_image %>"
+				data-description="Elephant Music | NEW WORK: <%= @work.campaign_title %> for <%= @work.brand_name %> featuring <%= @work.track_name %> by <%= @work.artist_name %>"
+				data-title="<%= @work.brand_name %> - <%= @work.campaign_title %>"
+				class="socialLinksHidden"
+			>
+			<%= link_to "", "#", data: { type: 'googleplus' }, :class => 'prettySocial fa fa-google-plus socialLinks' %>
+			<input id="pinterest" type="hidden" 
+				data-url="https://vimeo.com/<%= @work.vimeo %>" 
+				data-media="<%= @work.fb_image %>"
+				data-description="Elephant Music | NEW WORK: <%= @work.campaign_title %> for <%= @work.brand_name %> featuring <%= @work.track_name %> by <%= @work.artist_name %>"
+				data-title="<%= @work.brand_name %> - <%= @work.campaign_title %>"
+				class="socialLinksHidden"
+			>
+			<%= link_to "", "#", data: { type: 'pinterest' }, :class => 'prettySocial fa fa-pinterest socialLinks' %>
+		</div>
+		<hr class="artistSeparator" />
+		<% if @work.vimeo? %>
+			<div class="videoMaster">
+				<div class="videoDesktop">
+					<div class="fitvids responsiveVideo2">
+						<div class="plyr js-player">
+						    <div data-video-id="<%= @work.vimeo %>" data-type="<%= @work.platform %>"></div>
+						</div>
+					</div>
+				</div>
+				<div class="videoMobile">
+					<div class="fitvids responsiveVideo2">
+					<% if @work.platform == 'vimeo' %>
+						<div class="plyr js-player">
+							<% work_vimeo_mobile = @work.vimeo[18..-1] %>
+						    <iframe src="https://player.vimeo.com/video/<%= work_vimeo_mobile %>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+					<% else %>
+						<div class="plyr js-player">
+						    <div data-video-id="<%= @work.vimeo %>" data-type="<%= @work.platform %>"></div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+		<% if @work.vimeo? %><hr class="projectSeparator" /><% end %>
+		<% if @work.description? %><p class="projectDetail">
+			<%= simple_format @work.description, :class => "projectDetail descriptionSize1" %></p>
+		<% end %>
+	</div>
+</div>
+<script>
+	var workDialog = new FacebookFeedDialog(838327899644745,'<%= request.original_url %>','http://www.elephantmusic.net/share_closes');
+	workDialog.addParam('name','<%= @work.brand_name %> - <%= @work.campaign_title.split.join(' ') %>');
+	workDialog.addParam('description','<%= @work.description.split.join(' ') rescue nil %>');
+	workDialog.addParam('picture','<%= @work.fb_image %>');
+</script>

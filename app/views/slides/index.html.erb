@@ -1,0 +1,55 @@
+<div class="">
+	<div class="royalSlider rsDefault">
+		<% @sorted_slides.each do |slide| %>
+		    <div>
+			<% if slide.slide_image? %>
+				<%= image_tag(slide.slide_image, class: "rsImg") %>
+			<% else %>
+				<%= image_tag(slide.image, class: "rsImg") %>
+			<% end %>
+				<div class="slideTitle">
+					<a href="<%= slide_path(slide) %>" class="slideShowClick">
+						<h5 class="bigger"><%=  simple_format(slide.slide_title) %></h5>
+					</a>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<script>
+	
+	var sliderInstance = $('.royalSlider').royalSlider({
+		autoPlay: {
+			// autoplay options go gere
+	    	enabled: true,
+	    	pauseOnHover: false,
+			delay: 5000
+		},
+		imageAlignCenter: true,
+		imageScaleMode: 'fill',
+		loop: true,
+		arrowsNav: true
+	}).data("royalSlider");
+	
+	var slider = $(".royalSlider").data('royalSlider');
+	
+	slider.slides[0].holder.on('rsAfterContentSet', function() {
+		$('.slideTitle').addClass('slide-up', 250);
+	});
+	
+	sliderInstance.ev.on('rsBeforeAnimStart', function(event) {
+		$('.slideTitle').fadeOut(function(){
+			$('.slideTitle').removeClass('slide-up');
+			$('.slideTitle').addClass('slide-down');
+		});
+	});
+
+	sliderInstance.ev.on('rsAfterSlideChange', function(event) {
+		$('.slideTitle').removeClass('slide-down');
+		$('.slideTitle').fadeIn(function(){
+			$('.slideTitle').addClass('slide-up', 250);	
+		});
+	});
+		
+</script>

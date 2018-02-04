@@ -1,0 +1,115 @@
+<div class="parent3">
+	<%= link_to '', customs_path, :class => "customCloseIcon" %>
+</div>
+<div class="parent3Small">
+	<%= link_to '', customs_path, :class => "customCloseIconSmall" %>
+</div>
+<div class="canScroll">	
+	<div class="parent2">
+		<%= image_tag(@custom.image, :lazy => true, class: "lazy child-image2 customSquareImage") %>
+		<div class="child2 projectInfo">
+			<h1 class="bespokeHeader"><%= @custom.name %></h1>
+			<h1 class="bespokeHeaderUnder"><%= @custom.genre %></h1>
+		</div>
+	</div>
+	<div class="customInfo">
+		<h1 class="customTitle">Watch</h1>
+		<div class="videosWrapper">
+			<div class="videoPositionFix">
+				<div class="responsiveVideo frame_container">
+					<div class="videoMaster">
+						<div class="customVideoDesktop">
+							<div class="plyr js-player">
+					    		<div data-video-id="<%= @custom.vimeo_1 %>" data-type="<%= @custom.platform %>"></div>
+							</div>
+							<h1 class="artistName titleSize1 customVideoTitle">
+								<%= @custom.work_brand_name %> "<%= @custom.work_campaign_title %>"
+							</h1>
+						</div>
+						<div class="customVideoMobile">
+							<% if @custom.platform == 'vimeo' %>
+								<div class="plyr js-player">
+									<% custom_vimeo_mobile = @custom.vimeo_1[18..-1] %>
+								    <iframe src="https://player.vimeo.com/video/<%= custom_vimeo_mobile %>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+								</div>
+								<h1 class="artistName titleSize1 customVideoTitle">
+									<%= @custom.work_brand_name %> "<%= @custom.work_campaign_title %>"
+								</h1>
+							<% else %>
+								<div class="plyr js-player">
+								    <div data-video-id="<%= @custom.vimeo_1 %>" data-type="<%= @custom.platform %>"></div>
+								</div>
+								<h1 class="artistName titleSize1 customVideoTitle">
+									<%= @custom.work_brand_name %> "<%= @custom.work_campaign_title %>"
+								</h1>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="responsiveVideo frame_container">
+					<div class="plyr js-player">
+					    <div data-video-id="<%= @custom.vimeo_2 %>" data-type="<%= @custom.platform2 %>"></div>
+					</div>
+					<h1 class="artistName titleSize1 customVideoTitle">
+						<%= @custom.work_brand_name2 %> "<%= @custom.work_campaign_title2 %>"
+					</h1>
+				</div>
+				<div class="responsiveVideo frame_container">
+					<div class="plyr js-player">
+					    <div data-video-id="<%= @custom.vimeo_3 %>" data-type="<%= @custom.platform3 %>"></div>
+					</div>
+					<h1 class="artistName titleSize1 customVideoTitle">
+						<%= @custom.work_brand_name3 %> "<%= @custom.work_campaign_title3 %>"
+					</h1>
+				</div>
+			</div>
+		</div>
+		<hr class="customSeparator" />
+		<div class="belowTheFold">
+			<div class="aboutWrapper">
+				<h1 class="customTitleAbout">About</h1>
+				<p class="customDetail"><%= simple_format @custom.description, :class => "customDetail" %></p>
+			</div>
+			<div class="listenWrapper">
+			<h1 class="customTitleListen">Listen</h1>
+				<div class="customSoundcloudDesktop">
+					<!-- Nav tabs -->
+				  	<ul class="nav nav-tabs" role="tablist">
+				    	<li role="presentation" class="active">
+							<a href="#stream" aria-controls="stream" role="tab" data-toggle="tab">Stream</a>
+						</li>
+				    	<li role="presentation"><a href="#download" aria-controls="download" role="tab" data-toggle="tab">Download</a></li>
+				  	</ul>
+				  	<div class="tab-content">
+				  		<div role="tabpanel" class="tab-pane fade in active" id="stream">
+				  			<iframe width="100%" height="300" scrolling="no" frameborder="no" 
+		src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%=@custom.soundcloud%>&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=false"></iframe>
+				  		</div>
+				  		<div role="tabpanel" class="tab-pane fade" id="download">
+							<%= link_to 'Download wavs', "#{@custom.fullqual}", :target => "_blank", :class => "customBtn" %>
+							<%= link_to 'Download mp3', "#{@custom.lowqual}", :target => "_blank", :class => "customBtn" %>
+						</div>
+					</div>
+				</div>
+				<div class="customSoundcloudMobile">
+					<iframe width="100%" height="300" scrolling="no" frameborder="no" 
+src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%=@custom.soundcloud%>&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=false"></iframe>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+<script>
+	if ($(window).width() < 992) {
+		$('.customVideoDesktop').hide();
+		$('.customSoundcloudDesktop').hide();
+		$('.customVideoMobile').show();
+		$('.customSoundcloudMobile').show();
+	}
+	else {
+	   	$('.customVideoDesktop').show();
+		$('.customSoundcloudDesktop').show();
+		$('.customVideoMobile').hide();
+		$('.customSoundcloudMobile').hide();
+	}
+</script>
