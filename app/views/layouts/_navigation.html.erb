@@ -7,6 +7,10 @@
 			<%= link_to 'CMS', admins_slideshow_path %></div>
 		</div>
 	<% end %>
+	<button type="button" class="drawer-toggle drawer-hamburger">
+    	<span class="sr-only">toggle navigation</span>
+    	<span class="drawer-hamburger-icon"></span>
+    </button>
 	<nav class="drawer-nav draw-top" role="navigation">
 		<div class="logo3"><%= link_to(image_tag('logo.png', class: "logo clearFixer"), root_path) %></div>
 	    <ul class="drawer-menu">
@@ -15,8 +19,6 @@
         		<a class="navigationButton clearFixer" href="mailto:info@elephantmusic.net?Subject=Contact%20
 				from%20the%20website" target="_top">Contact</a>
         	</li>
-			<li class="navButton"><%= link_to 'Composition', customs_path, :class => "navigationButton clearFixer", 
-			:target => "blank" %></li>
 		</ul>
     </nav>
 </header>
