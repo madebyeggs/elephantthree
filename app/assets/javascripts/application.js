@@ -154,10 +154,12 @@ $(document).ready(function(){
 	if ($(window).width() < 992) {
 		$('.videoDesktop').hide();
 		$('.videoMobile').show();
+		$('.drawer-toggle').show();
 	}
 	else {
 	   	$('.videoDesktop').show();
 		$('.videoMobile').hide();
+		$('.drawer-toggle').hide();
 	}
 	
 });
