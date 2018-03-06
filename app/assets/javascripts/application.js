@@ -23,6 +23,7 @@
 //= require nprogress-turbolinks
 //= require update_works_row_order
 //= require update_announcements_row_order
+//= require Footer
 
 $(document).ready(function(){
 	
@@ -40,8 +41,7 @@ $(document).ready(function(){
 	    }
 	});
 	
-	$('.responsiveVideo').fitVids();
-	$('.responsiveVideo2').fitVids();
+	$(".iframe").fitVids();
 	
 	var options = {clickToPlay: true, controls: ['fullscreen']}
 	
@@ -62,3 +62,11 @@ $(function() {
 		e.PreventDefault()
   	});
 });
+function loadIframe(iframeName, url) {
+    var $iframe = $('#' + iframeName);
+    if ( $iframe.length ) {
+        $iframe.attr('src',url);   
+        return false;
+    }
+    return true;
+}
