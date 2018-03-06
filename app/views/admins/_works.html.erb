@@ -1,19 +1,18 @@
 <table class="table table-striped" id="sortableWork">
 	<tbody>
 		<thead>
-  		<tr>
-		<th>Image</th>
-    		<th>Brand Name</th>
-    		<th>Title</th>
-		<th>Agency</th>
-		<th>Video URL</th>
-		<th>Platform</th>
-		<th>Slideshow?</th>
-		<th>Newsletter?</th>
-		<th></th>
-  		</tr>
+	  		<tr>
+				<th>Image</th>
+		    	<th>Brand Name</th>
+		    	<th>Title</th>
+				<th>Agency</th>
+				<th>Video URL</th>
+				<th>Platform</th>
+				<th>Slideshow?</th>
+				<th>Newsletter?</th>
+				<th></th>
+	  		</tr>
 		</thead>
-		<tbody>
   		<% @works.each do |work| %>
     		<tr data-item-id=<%= "#{work.id}" %> class="item">
 			<td><%= image_tag(work.image, class: "thumb2") %></td>

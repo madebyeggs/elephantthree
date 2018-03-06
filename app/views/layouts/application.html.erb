@@ -1,70 +1,31 @@
-<!DOCTYPE html>
-<html>
-	<head>
-  		<title>Elephant Music | Unique Music to Picture</title>
-		
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="format-detection" content="telephone=no">
-		<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-		<meta name="description" content="Elephant Music | Unique Music to Picture | Our passion is diverse, authentic music. Our expertise is in applying it to picture. We choose writers that create vibrant textures and emotions, transcending beyond music into powerful, dynamic audio visual format.">
-		<meta name="title" content="Elephant Music | Unique Music to Picture">
-  		
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  		<%= csrf_meta_tags %>
-		<%= display_meta_tags %>
-		
-		<%= favicon_link_tag 'favicon.png' %>
-		<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
-	</head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
 
-		<link rel="stylesheet" href="./assets/Style.css">
-		<meta name="theme-color" content="#ffffff">
-		<meta name="robots" content="noindex,follow">
+	<title>Elephant Music | Unique music to picture</title>
 
-		<script src="./assets/require.js"></script>
-		<script type="text/javascript">
-			require.config({
-				"waitSeconds": 0,
-				"paths": {
-	    			"root": "http://hsachs.at/",
-	    			"base": "http://hsachs.at/Base/Js/",
-	    			"project": "http://hsachs.at/Assets/Js/",
-	    			"jquery": "http://hsachs.at/Base/Js/Vendor/JQuery",
-	    			"async": "http://hsachs.at/Base/Js/Vendor/Async",
-	    			"flickity": "http://hsachs.at/Assets/Js/Vendor/Flickity",
-	    			"debounce": "http://hsachs.at/Assets/Js/Vendor/debounce",
-	    			"waypoint": "http://hsachs.at/Assets/Js/Vendor/waypoint"
-				},
-				"shim": {
-	        		"flickity": [
-	            		"jquery"
-	        		],
-	        		"debounce": [
-	            		"jquery"
-	        		],
-	        		"waypoint": [
-	            		"jquery"
-	        		]
-	    		}
-			});
-		</script>
-		<script src="./assets/Header.js"></script>
-		<link type="text/css" rel="stylesheet" charset="UTF-8" href="./assets/translateelement.css">
-		<script type="text/javascript" charset="UTF-8" src="./assets/common.js"></script>
-		<script type="text/javascript" charset="UTF-8" src="./assets/util.js"></script>
-		<script type="text/javascript" charset="UTF-8" src="./assets/stats.js"></script>
-	</head>
-	
-	
-	
-	
-	
-	
-	
-	<body bgcolor="#000000" class="drawer drawerMobileFix">
-		<%= render 'layouts/navigation' %>
-		<%= render 'layouts/main' %>
+	<link rel="stylesheet" href="./assets/Style.css">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="robots" content="noindex,follow">
+	<% if controller_name == "admins" || controller_name == "admin" %>
+		<%= javascript_include_tag 'adminApplication', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag 'adminApplication', media: 'all', 'data-turbolinks-track' => true %>
+	<% else %>
+		<%= javascript_include_tag 'mainApplication', 'data-turbolinks-track' => true %>
+	<% end %>
+	<link type="text/css" rel="stylesheet" charset="UTF-8" href="./assets/translateelement.css">
+</head>
+	<body class="page-template-default page page-slug-wohnwelten-overview">
+		
+		<% if controller_name == "admins" || controller_name == "admin" %>
+			<%= render 'layouts/admin_navigation' %>
+			<%= render 'layouts/main' %>
+		<% else %>
+			<%= render 'layouts/navigation' %>
+			<%= render 'layouts/main' %>
+			<%= render 'layouts/footer' %>
+		<% end %>
 	</body>
 </html>

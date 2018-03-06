@@ -9,7 +9,7 @@ textarea.form-control {
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-   background-color: #363636;
+   background-color: #e5e5e5;
 }
 
 .col-md-5, .col-md-7 {padding:0px;margin:0px;float:left;}

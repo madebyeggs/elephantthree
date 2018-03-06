@@ -30,6 +30,7 @@ gem 'rest_in_place'
 gem 'imagesLoaded_rails'
 gem 'best_in_place', '~> 3.0.1'
 gem 'newrelic_rpm'
+gem "lazyload-rails"
 gem 'lazysizes_rails'
 gem 'fitvidsjs_rails'
 gem 'plyr-rails'

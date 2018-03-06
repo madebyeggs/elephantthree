@@ -8,3 +8,48 @@
 .submitLarge {width:96%;margin:2% 1.5% 10%;float:left;text-align:center;}
 .btnLarge {width:150px;height:60px;}
 .customVideoTitle {font-size:14px!important;margin:10px 0px 30px 0px;text-align:center;}
+.userInfo {position:absolute;}
+.mobile {display:none;}
+.thumb {width:225px}
+.thumb2 {width:100px!important}
+.thumb3 {width:60px}
+.thumb .img, .thumb2 .img,, .thumb3 .img {max-width:100%!important;}
+.align-right {text-align:right;}
+.userInfo {position:absolute;width:20%;top:10px;left:12%;font-size:14px;color:#ffffff;font-style:italic;text-align:right;z-index:1000;}
+.cmsTable {padding:0px 20px;}
+.csvInput {float:left;margin:20px 0px 25px -155px;}
+.csvInput2 {float:left;margin:20px 0px 25px 0px;}
+.csvInput3 {float:left;margin:20px 0px 25px 12px;}
+.csvInput4 {float:left;margin:20px 0px 25px -155px;}
+.marginCsv {margin:-10px 0px 0px 0px;}
+.marginCsv2 {margin:-10px 0px 0px 0px;}
+.ten {width:10%!important;}
+.thirty {width:30%!important;}
+.five {width:5%!important;}
+.burger-icon {
+    position: fixed;
+    left: 1em;
+    top: 1em;
+    z-index: 99;
+    width: 3.2em;
+    padding: 0 1em;
+    box-sizing: content-box;
+    cursor: pointer
+}
+
+.burger-icon svg {
+    width: 100%
+}
+
+.burger-icon svg path {
+    -webkit-transition: fill .25s ease-in-out;
+    transition: fill .25s ease-in-out
+}
+
+.burger-icon.is_white svg path {
+    fill: #fff
+}
+
+.burger-icon.is_black_fixed svg path {
+    fill: #000 !important
+}

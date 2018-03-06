@@ -14,7 +14,7 @@ class AdminsController < ApplicationController
     end
   end
   
-  def slideshow
+  def index
     define_slides
     respond_to do |format|
       format.html
