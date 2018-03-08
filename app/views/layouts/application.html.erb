@@ -5,17 +5,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
 
 	<title>Elephant Music | Unique music to picture</title>
-
-	<link rel="stylesheet" href="./assets/Style.css">
+	
 	<meta name="theme-color" content="#ffffff">
 	<meta name="robots" content="noindex,follow">
+	
 	<% if controller_name == "admins" || controller_name == "admin" %>
 		<%= javascript_include_tag 'adminApplication', 'data-turbolinks-track' => true %>
 		<%= stylesheet_link_tag 'adminApplication', media: 'all', 'data-turbolinks-track' => true %>
 	<% else %>
 		<%= javascript_include_tag 'mainApplication', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag 'mainApplication', media: 'all', 'data-turbolinks-track' => true %>
 	<% end %>
-	<link type="text/css" rel="stylesheet" charset="UTF-8" href="./assets/translateelement.css">
+	
 </head>
 	<body class="page-template-default page page-slug-wohnwelten-overview">
 		
