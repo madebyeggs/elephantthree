@@ -1,8 +1,12 @@
 <div class="col-md-12" style="margin:30px 0px 600px 0px;">
 	<div class="col-md-1">&nbsp;</div>
-	<div class="col-md-10 cmsTable">
-		<h2 style="color:#5cb85c"><em><%= flash[:notice] %></em></h2>
-		<h2 class="titles2 placements">Slides</h2>
+	<div class="col-md-10">
+		
+		<h2 class="titles2"><%= link_to 'Slides', admins_path %></h2>
+		<h2 class="titles2"><%= link_to 'Placements', admins_placements_path %></h2>
+		<h2 class="titles2"><%= link_to 'Announcements', admins_announcements_path %></h2>
+
+		<h2 style="color:#5cb85c"><em><%= flash[:notice] %></em></h2><br/>
 		<table class="table table-striped" id="sortableAnnouncement">
 		 		<thead>
 		   		<tr>

@@ -26,30 +26,7 @@
 .ten {width:10%!important;}
 .thirty {width:30%!important;}
 .five {width:5%!important;}
-.burger-icon {
-    position: fixed;
-    left: 1em;
-    top: 1em;
-    z-index: 99;
-    width: 3.2em;
-    padding: 0 1em;
-    box-sizing: content-box;
-    cursor: pointer
-}
-
-.burger-icon svg {
-    width: 100%
-}
-
-.burger-icon svg path {
-    -webkit-transition: fill .25s ease-in-out;
-    transition: fill .25s ease-in-out
-}
-
-.burger-icon.is_white svg path {
-    fill: #fff
-}
-
-.burger-icon.is_black_fixed svg path {
-    fill: #000 !important
-}
+td {font-size:12px;}
+.titles2 {display:inline;font-size:20px;margin:0px 20px;text-decoration:none;color:#000000;}
+.titles2 a:hover {text-decoration:none;}
+.titles2 :nth-child(1){margin:0px 20px 0px -20px;}
