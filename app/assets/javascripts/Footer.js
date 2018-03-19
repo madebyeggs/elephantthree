@@ -6384,6 +6384,13 @@ function(e, t) {
             else var t = e(".section-Intro .image-wrapper").attr("data-textColor");
             t = null == t ? "is_black" : "b" == t || "black" == t || "schwarz" == t || "s" == t ? "is_black" : "is_white", e(".text-right").addClass(t), e(".hans-logo").addClass(t), e(".burger-icon").addClass(t), e(".down-wrapper").addClass(t)
         }
+		
+        function s() {
+            if (e(".image-Big .text-wrapper-big2").length) var t = e(".image-Big .text-wrapper-big2").attr("data-textColor");
+            else if (e(".intro-slide-0").length) var t = e(".intro-slide-0").attr("data-textColor");
+            else var t = e(".section-Intro .image-wrapper").attr("data-textColor");
+            t = null == t ? "is_black" : "b" == t || "black" == t || "schwarz" == t || "s" == t ? "is_black" : "is_white", e(".text-right").addClass(t), e(".hans-logo").addClass(t), e(".burger-icon").addClass(t), e(".down-wrapper").addClass(t)
+        }
 
         function a(n) {
             if (e(".slider-Big").length > 0) {
@@ -6433,7 +6440,7 @@ function(e, t) {
 
         function c() {
             var t = e(".footer").css("height");
-            e(".footer-placeholder").css("height", t)
+            e(".footer-placeholder").css("height", 250)
         }
 
         function u() {
