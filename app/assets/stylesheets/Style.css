@@ -56,7 +56,6 @@ body {
     margin: .25em 0;
     padding: 0 0.7em;
     text-align: center;
-    /*border-left: 1px solid #ccc;*/
     background-color: #fff;
 }
 .flex-list ul::after {
