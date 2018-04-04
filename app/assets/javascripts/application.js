@@ -23,7 +23,7 @@
 //= require nprogress-turbolinks
 //= require update_works_row_order.js.coffee
 //= require jquery.fitvids.js
-//= require Footer.js
+
 
 $(document).ready(function(){
 	
