@@ -1,4 +1,6 @@
-@import 'reset';
-@import 'style';
-@import 'footer';
-@import 'grid';
+/* ...
+*= require reset
+*= require style
+*= require footer
+*= require grid
+*/
