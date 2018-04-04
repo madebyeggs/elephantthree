@@ -20,5 +20,10 @@
 </head>
 	<body>
 		<div class="bgImage"></div>
+		<% if controller_name == "admins" || controller_name == "admin" %>
+			<%= render 'layouts/main' %>
+		<% else %>
+			<%= yield %>
+		<% end %>
 	</body>
 </html>
