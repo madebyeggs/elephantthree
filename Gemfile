@@ -17,7 +17,6 @@ gem "twitter-bootstrap-rails"
 gem 'nprogress-rails'
 gem 'devise'
 gem 'bootstrap_form'
-gem "lazyload-rails"
 gem 'jquery-turbolinks'
 gem "paperclip", "~> 4.2"
 gem 'cocaine', '~> 0.5.4'
