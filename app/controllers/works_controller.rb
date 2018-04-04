@@ -8,7 +8,7 @@ class WorksController < ApplicationController
     def create
       @work = Work.create(work_params)
       respond_to do |format|
-        format.html { redirect_to admins_placements_path }
+        format.html { redirect_to admins_path }
       end
     end
 
@@ -20,7 +20,7 @@ class WorksController < ApplicationController
       @work = Work.find_by_slug(params[:id])
       if @work.update_attributes(work_params)
         respond_to do |format|
-         format.html { redirect_to admins_placements_path }
+         format.html { redirect_to admins_path }
          format.json { render :json => @work }
         end
       else
@@ -35,7 +35,7 @@ class WorksController < ApplicationController
       @work = Work.find_by_slug(params[:id])
       @work.destroy
       respond_to do |format|
-        format.html { redirect_to admins_placements_path }
+        format.html { redirect_to admins_path }
       end
     end
     
@@ -46,6 +46,7 @@ class WorksController < ApplicationController
     
     def index
       @works = Work.rank(:row_order).all
+      @first_work = Work.rank(:row_order).first
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
         :title    => 'Elephant Music | Placements',

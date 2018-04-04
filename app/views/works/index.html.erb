@@ -1,21 +1,24 @@
-<div class="canScroll" id="workScrollPosition">
-	<div class="col-md-12">
-		<% @works.each do |work| %>
-		<input type="hidden" value=<%= work.id %> class="modal-object-id">
-		<a href="<%= work_path(work) %>" class="positionButtonWork">
-			<div class="col-md-4b artistContainer">
-				<div class="artist">
-					<div class="info-wrapper">
-						<h5 class="colour"><%= work.brand_name %></h5>
-						<h5><%= work.agency %></h5>
-						<hr class="dots"/>
-						<p class="artistDescription"><%= work.campaign_title %><br/>"<%= work.track_name %>" by <%= work.artist_name %></p>
-					</div>
-					<%#= image_tag(work.image, lazy: true, class: "lazy") %>
-					<%#= image_tag "https://d9gj9tfjl21as.cloudfront.net/ajaxBig2.gif", data:{ src: image_path(work.image) }, class: 'lazy lazyload' %>
-				</div>
-			</div>
-		</a>
-		<% end %>
+<div class="section section-GridElement  grid-size-threes has_hover">
+	<div class="inner-wrapper flex-list" style="margin-top:60px;margin-bottom:60px;">
+		<div class="iframe">
+			<% if @first_work.platform == "vimeo" %>
+				<iframe name="ifrm" id="ifrm" src="https://player.vimeo.com/video/<%= @first_work.vimeo %>" 
+				frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<% else %>
+				<iframe name="ifrm" id="ifrm" src="https://www.youtube.com/embed/<%= @first_work.vimeo %>" 
+				frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<% end %>
+		</div>
+		
+		<ul style="margin:60px 64px 0px 64px;font-size:14px;">
+			<% @works.each do |work| %>
+				<% if work.platform == "vimeo" %>
+			    	<li><a href="https://player.vimeo.com/video/<%= work.vimeo %>" onclick="return loadIframe('ifrm', this.href);"><%= work.brand_name %></a></li>
+				<% else %>
+					<li><a href="https://www.youtube.com/embed/<%= work.vimeo %>" onclick="return loadIframe('ifrm', this.href);"><%= work.brand_name %></a></li>
+				<% end %>
+			<% end %>
+		</ul>
+		
 	</div>
 </div>

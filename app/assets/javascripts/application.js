@@ -21,10 +21,14 @@
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
-//= require update_announcements_row_order.js.coffee
 //= require update_works_row_order.js.coffee
+//= require jquery.fitvids.js
+
 
 $(document).ready(function(){
+	
+	$(".iframe").fitVids();
+	$(".best_in_place").best_in_place();
 	
 	$(".change").on("ajax:success",function(){
 	    location.reload();
@@ -38,7 +42,22 @@ $(document).ready(function(){
 	    }
 	});
 	
-  	jQuery(".best_in_place").best_in_place();
+	var timer = setTimeout(function() { $('.overlay').click(); }, 4000);
+	$('.overlay').click(function(){
+		clearTimeout(timer);
+		$('.overlay').fadeOut(500, function(){
+			$('html, body').css('overflowY', 'auto'); 
+		});
+	});
+	
+	var classHighlight = 'highlight';
+	$("li:first").addClass(classHighlight); 
+	var $thumbs = $('li').click(function(e) {
+	    e.preventDefault();
+	    $thumbs.removeClass(classHighlight);
+	    $(this).addClass(classHighlight);
+	});
+	
 
 	$('#myTabs a').click(function (e) {
 	  e.preventDefault()
@@ -53,3 +72,11 @@ $(function() {
 		e.PreventDefault()
   	});
 });
+function loadIframe(iframeName, url) {
+    var $iframe = $('#' + iframeName);
+    if ( $iframe.length ) {
+        $iframe.attr('src',url);   
+        return false;
+    }
+    return true;
+}

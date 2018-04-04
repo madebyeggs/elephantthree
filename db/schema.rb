@@ -11,41 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306100218) do
-
-  create_table "announcements", force: :cascade do |t|
-    t.text     "slide_title"
-    t.string   "vimeo"
-    t.text     "description"
-    t.string   "soundcloud"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "slide_image_file_name"
-    t.string   "slide_image_content_type"
-    t.integer  "slide_image_file_size"
-    t.datetime "slide_image_updated_at"
-    t.string   "slug"
-    t.integer  "row_order"
-    t.string   "fb_image_file_name"
-    t.string   "fb_image_content_type"
-    t.integer  "fb_image_file_size"
-    t.datetime "fb_image_updated_at"
-    t.boolean  "slideshow"
-    t.text     "slide_title2"
-    t.text     "slide_title3"
-    t.integer  "Slideshowposition"
-    t.string   "platform"
-    t.boolean  "newsletter"
-    t.integer  "newsletterposition"
-    t.string   "hero_file_name"
-    t.string   "hero_content_type"
-    t.integer  "hero_file_size"
-    t.datetime "hero_updated_at"
-    t.string   "nltitle"
-    t.string   "nlsubtitle"
-  end
-
-  add_index "announcements", ["slug"], name: "index_announcements_on_slug", unique: true
+ActiveRecord::Schema.define(version: 20180404143003) do
 
   create_table "compositonlogos", force: :cascade do |t|
     t.datetime "created_at", null: false

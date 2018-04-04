@@ -8,6 +8,14 @@ class Work < ActiveRecord::Base
   
   require 'csv'
   
+  before_save { |work|
+    if work.vimeo_changed? && work.platform == "vimeo" then
+      work.vimeo = work.vimeo.partition(".com/").last
+    elsif work.vimeo_changed? && work.platform == "youtube"
+      work.vimeo = work.vimeo.partition("v=").last
+    end
+  }
+  
   def self.import(file)
     CSV.foreach(file.path, headers:true) do |row|
       work = Work.find_or_initialize_by(campaign_title: row["campaign_title"])
