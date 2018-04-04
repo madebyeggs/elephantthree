@@ -10,16 +10,15 @@
 	<meta name="robots" content="noindex,follow">
 	
 	<% if controller_name == "admins" || controller_name == "admin" %>
-		<%= javascript_include_tag 'adminApplication', 'data-turbolinks-track' => true %>
 		<%= stylesheet_link_tag 'adminApplication', media: 'all', 'data-turbolinks-track' => true %>
 	<% else %>
-		<%= javascript_include_tag 'mainApplication', 'data-turbolinks-track' => true %>
 		<%= stylesheet_link_tag 'mainApplication', media: 'all', 'data-turbolinks-track' => true %>
 	<% end %>
 	
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	
 </head>
-	<body class="page-template-default page page-slug-wohnwelten-overview">
-		
+	<body class="">
 		<% if controller_name == "admins" || controller_name == "admin" %>
 			<%= render 'layouts/main' %>
 		<% else %>

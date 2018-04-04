@@ -22,8 +22,12 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require update_works_row_order.js.coffee
+//= require jquery.fitvids.js
 
 $(document).ready(function(){
+	
+	$(".iframe").fitVids();
+	$(".best_in_place").best_in_place();
 	
 	$(".change").on("ajax:success",function(){
 	    location.reload();
@@ -36,8 +40,6 @@ $(document).ready(function(){
 	        return false;
 	    }
 	});
-	
-  	jQuery(".best_in_place").best_in_place();
 
 	$('#myTabs a').click(function (e) {
 	  e.preventDefault()
@@ -52,3 +54,11 @@ $(function() {
 		e.PreventDefault()
   	});
 });
+function loadIframe(iframeName, url) {
+    var $iframe = $('#' + iframeName);
+    if ( $iframe.length ) {
+        $iframe.attr('src',url);   
+        return false;
+    }
+    return true;
+}
