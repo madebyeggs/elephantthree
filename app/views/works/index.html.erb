@@ -1,21 +1,29 @@
-<div class="canScroll" id="workScrollPosition">
-	<div class="col-md-12">
-		<% @works.each do |work| %>
-		<input type="hidden" value=<%= work.id %> class="modal-object-id">
-		<a href="<%= work_path(work) %>" class="positionButtonWork">
-			<div class="col-md-4b artistContainer">
-				<div class="artist">
-					<div class="info-wrapper">
-						<h5 class="colour"><%= work.brand_name %></h5>
-						<h5><%= work.agency %></h5>
-						<hr class="dots"/>
-						<p class="artistDescription"><%= work.campaign_title %><br/>"<%= work.track_name %>" by <%= work.artist_name %></p>
-					</div>
-					<%#= image_tag(work.image, lazy: true, class: "lazy") %>
-					<%= image_tag "https://d9gj9tfjl21as.cloudfront.net/ajaxBig2.gif", data:{ src: image_path(work.image) }, class: 'lazy lazyload' %>
-				</div>
-			</div>
-		</a>
-		<% end %>
+<div class="section section-GridElement  grid-size-threes has_hover">
+	<div class="inner-wrapper flex-list" style="margin-top:60px;margin-bottom:60px;">
+	<ul style="margin:0px 64px 60px 64px;font-size:14px;">
+		    <li><a href="https://player.vimeo.com/video/230871042" onclick="return loadIframe('ifrm', this.href);">Mother!</a></li>
+		    <li><a href="https://player.vimeo.com/video/222859653" onclick="return loadIframe('ifrm', this.href);">God's Own Country</a></li>
+			<li><a href="https://www.youtube.com/embed/5Nzd0vBfBEA" onclick="return loadIframe('ifrm', this.href);">Linkedin</a></li>
+			<li><a href="https://www.youtube.com/embed/88CeoDLxebg" onclick="return loadIframe('ifrm', this.href);">Call Of Duty</a></li>
+			<li><a href="https://www.youtube.com/embed/cZxOvNxbi7U" onclick="return loadIframe('ifrm', this.href);">Annie Leibovitz</a></li>
+			<li><a href="https://player.vimeo.com/video/217831651" onclick="return loadIframe('ifrm', this.href);">The Mummy</a></li>
+			<li><a href="https://player.vimeo.com/video/123636844" onclick="return loadIframe('ifrm', this.href);">The Waking Dead</a></li>
+			<li><a href="https://player.vimeo.com/video/146642051" onclick="return loadIframe('ifrm', this.href);">Toyota</a></li>
+			<li><a href="https://player.vimeo.com/video/217844611" onclick="return loadIframe('ifrm', this.href);">Thelma</a></li>
+			<li><a href="https://player.vimeo.com/video/158895679" onclick="return loadIframe('ifrm', this.href);">My Beautiful Broken Brain</a></li>
+			<li><a href="https://player.vimeo.com/video/132079272" onclick="return loadIframe('ifrm', this.href);">Knorr</a></li>
+			<li><a href="https://player.vimeo.com/video/192495466" onclick="return loadIframe('ifrm', this.href);">Captive</a></li>
+			<li><a href="https://player.vimeo.com/video/152558605" onclick="return loadIframe('ifrm', this.href);">Curzon</a></li>
+			<li><a href="https://player.vimeo.com/video/246425488" onclick="return loadIframe('ifrm', this.href);">7 Days In Entebbe</a></li>
+			<li><a href="https://player.vimeo.com/video/192916654" onclick="return loadIframe('ifrm', this.href);">Collateral Beauty</a></li>
+			<li><a href="https://player.vimeo.com/video/198211359" onclick="return loadIframe('ifrm', this.href);">Sully</a></li>
+			<li><a href="https://player.vimeo.com/video/217012129" onclick="return loadIframe('ifrm', this.href);">The Limehouse Golum</a></li>
+			<li><a href="https://player.vimeo.com/video/243667475" onclick="return loadIframe('ifrm', this.href);">A Quiet Place</a></li>
+			<li><a href="https://player.vimeo.com/video/217483760" onclick="return loadIframe('ifrm', this.href);">6 Days</a></li>
+		</ul>
+		<div class="iframe">
+			<iframe name="ifrm" id="ifrm" src="https://player.vimeo.com/video/230871042" 
+			frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
 	</div>
 </div>
