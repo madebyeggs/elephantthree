@@ -21,7 +21,6 @@
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
-//= require update_announcements_row_order.js.coffee
 //= require update_works_row_order.js.coffee
 
 $(document).ready(function(){
