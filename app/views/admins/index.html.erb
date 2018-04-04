@@ -1,7 +1,7 @@
 <div class="col-md-12" style="margin:25px 0px 600px 0px;">
 	<div class="col-md-1">&nbsp;</div>
 	<div class="col-md-10">
-		<h2 class="titles2"><%= link_to 'Placements', admins_placements_path %></h2>
+		<h2 class="titles2"><%= link_to 'Placements', admins_path %></h2>
 		
 		<h2 style="color:#5cb85c"><em><%= flash[:notice] %></em></h2><br/>
 		<%= form_tag import_works_path, class: "csvInput marginCsv", multipart: true do %>

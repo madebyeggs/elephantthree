@@ -41,6 +41,23 @@ $(document).ready(function(){
 	        return false;
 	    }
 	});
+	
+	var timer = setTimeout(function() { $('.overlay').click(); }, 4000);
+	$('.overlay').click(function(){
+		clearTimeout(timer);
+		$('.overlay').fadeOut(500, function(){
+			$('html, body').css('overflowY', 'auto'); 
+		});
+	});
+	
+	var classHighlight = 'highlight';
+	$("li:first").addClass(classHighlight); 
+	var $thumbs = $('li').click(function(e) {
+	    e.preventDefault();
+	    $thumbs.removeClass(classHighlight);
+	    $(this).addClass(classHighlight);
+	});
+	
 
 	$('#myTabs a').click(function (e) {
 	  e.preventDefault()
