@@ -1,19 +1,26 @@
 <div class="section section-GridElement  grid-size-threes has_hover">
 	<div class="inner-wrapper flex-list" style="margin-top:60px;margin-bottom:60px;">
+		<%= image_tag("loading.gif", class: "loading") %>
 		<div class="iframe">
 			<% if @first_work.platform == "vimeo" %>
-				<iframe name="ifrm" id="ifrm" src="https://player.vimeo.com/video/<%= @first_work.vimeo %>" 
-				frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<div class="frame_container">
+					<%= image_tag("loading.gif", class: "loading") %>
+					<iframe name="ifrm" id="ifrm" src="https://player.vimeo.com/video/<%= @first_work.vimeo %>" 
+					frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
 			<% else %>
-				<iframe name="ifrm" id="ifrm" src="https://www.youtube.com/embed/<%= @first_work.vimeo %>" 
-				frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<div class="frame_container">
+					<%= image_tag("loading.gif", class: "loading") %>
+					<iframe name="ifrm" id="ifrm" src="https://www.youtube.com/embed/<%= @first_work.vimeo %>" 
+					frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
 			<% end %>
 		</div>
 		
 		<ul style="margin:60px 64px 0px 64px;font-size:14px;">
 			<% @works.each do |work| %>
 				<% if work.platform == "vimeo" %>
-			    	<li><a href="https://player.vimeo.com/video/<%= work.vimeo %>" onclick="return loadIframe('ifrm', this.href);"><%= work.brand_name %></a></li>
+					<li><a href="https://player.vimeo.com/video/<%= work.vimeo %>" onclick="return loadIframe('ifrm', this.href);"><%= work.brand_name %></a></li>
 				<% else %>
 					<li><a href="https://www.youtube.com/embed/<%= work.vimeo %>" onclick="return loadIframe('ifrm', this.href);"><%= work.brand_name %></a></li>
 				<% end %>

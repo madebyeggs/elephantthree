@@ -1,7 +1,6 @@
 html {
     font-size: 10px;
     background-color: #000;
-	overflow: hidden;
 }
 
 body {
@@ -10,7 +9,6 @@ body {
     width: 100%;
     float: left;
     display: block;
-    overflow: hidden
 }
 
 .site {
@@ -19,9 +17,71 @@ body {
     height: auto;
     display: block;
     position: relative;
-    overflow-x: hidden;
     z-index: 1;
     background-color: #fff;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  .menu-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 18px 20px;
+	size:2em;
+	color:black;
+  }
+  .fix-search & {
+    background: #000000;
+	z-index:5000000;
+	.menu-icon {
+		color:white;
+	}
+  }
+}
+
+.logoWrapper {
+	padding:85px 680px 400px;
+    .dont-display & {
+      display: none;
+	  padding:none;
+    }
+}
+.logo {width:320px;}
+
+.search {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  input {
+    width: 265px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 15px;
+    transition: width 0.2s;
+    -webkit-appearance: none;
+  }
+  .fix-search & {
+    position: fixed;
+    top: 10px;
+    input {
+      width: 100%;
+    }
+  }
 }
 
 .section {
@@ -60,8 +120,6 @@ body {
 }
 .flex-list li:nth-child(1) {border-left:none;}
 .highlight {font-weight:bold;}
-
-.logo {position:absolute;top:50px;left:50px;width:140px;filter: invert(100%);}
 
 @media only screen and (max-width: 960px) {
     

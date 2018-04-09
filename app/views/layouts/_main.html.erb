@@ -1,4 +1,10 @@
-<div class="site">
-	<div class="overlay"></div>
+<div class="site wrap" id="wrap">
+	<header class="top-header">
+		<span class="menu-icon">☰</span>
+	</header>
+	<div class="logoWrapper">
+		<%= image_tag("logo.jpg", class: "logo") %>
+	</div>
 	<%= yield %>
-</div><!-- SITE END -->
+	<div class="search"><input type="search" placeholder="Search or type URL" /></div>
+</div>
