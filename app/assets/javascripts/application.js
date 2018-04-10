@@ -24,7 +24,6 @@
 //= require update_works_row_order.js.coffee
 //= require jquery.fitvids.js
 
-
 $(document).ready(function(){
 	
 	$(".iframe").fitVids();

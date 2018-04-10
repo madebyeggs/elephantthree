@@ -9,21 +9,9 @@
 	<meta name="theme-color" content="#ffffff">
 	<meta name="robots" content="noindex,follow">
 	
-	<% if controller_name == "admins" || controller_name == "admin" %>
-		<%= stylesheet_link_tag 'adminApplication', media: 'all', 'data-turbolinks-track' => true %>
-	<% else %>
-		<%= stylesheet_link_tag 'mainApplication', media: 'all', 'data-turbolinks-track' => true %>
-	<% end %>
-	
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	
 </head>
-	<body class="">
-		<% if controller_name == "admins" || controller_name == "admin" %>
-			<%= render 'layouts/main' %>
-		<% else %>
-			<%= render 'layouts/main' %>
-			<%= render 'layouts/footer' %>
-		<% end %>
-	</body>
+	<%= render 'layouts/main' %>
 </html>
