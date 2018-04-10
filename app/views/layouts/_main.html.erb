@@ -51,18 +51,9 @@
 					<section class="news__container">
 	    				<div class="container-fluid">
 	       					<div class="row">
-	            				<div class="col-xxs-10 col-xxs-push-1 col-sm-12 col-sm-push-0">
-	                				<h2 class="">
-	                    				Welcome to <span>the Index page</span>
-	                				</h2>
-	   						 	</div>
 	              			  	<div class="col-xxs-10 col-xxs-push-1 col-sm-12 col-sm-push-0">
 	      							<figure class="new__item news__item--push-down">
-	                					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at lectus quis ante lobortis fermentum nec ac metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer aliquet suscipit nunc, ultrices egestas quam eleifend id. Ut pellentesque sodales nisl. Vestibulum a iaculis ante, eget ultricies turpis. Cras sed fringilla erat. Nulla dapibus, nulla at pretium aliquet, purus urna eleifend lectus, quis finibus dolor lectus id quam. Nullam aliquet, erat sed hendrerit bibendum, lorem tellus dictum augue, ut mattis mauris sem eu nunc. Vestibulum maximus, augue vel ultricies porta, justo mauris imperdiet sapien, laoreet posuere mi turpis malesuada mi. Aenean commodo molestie sodales. Duis malesuada tristique lectus nec suscipit. Ut a consequat orci, nec semper ipsum.</p>
-									  	<p>Donec at condimentum risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper laoreet sapien vitae lobortis. Vivamus id tristique augue, eu scelerisque nisl. Ut pharetra ultricies nibh eget tristique. Aliquam congue a dolor quis mollis. Phasellus eu vulputate massa. Donec ut auctor enim, id elementum felis. Sed sit amet lectus ut urna maximus fringilla eget sit amet arcu. Donec sit amet orci turpis. Donec dolor tellus, consequat vel bibendum vitae, facilisis nec lectus.</p>
-										<p>Vivamus tempor sapien sed quam bibendum rutrum. Sed porta ligula vitae iaculis congue. Ut sed varius sapien. Donec dictum eget mauris sed tincidunt. Mauris non neque pretium enim pretium commodo sit amet quis erat. Nulla ut ex porta, vehicula mauris in, finibus libero. Proin hendrerit lectus aliquam, congue tortor quis, laoreet tortor. Donec posuere magna sagittis imperdiet scelerisque. Morbi id rhoncus augue. Nulla auctor nunc scelerisque, hendrerit augue ut, sagittis lectus. Ut nunc tortor, tempus non enim eget, lobortis hendrerit elit. Nam sit amet odio vitae ante rutrum sodales. Sed sit amet pharetra turpis, egestas viverra ipsum. Proin sodales rutrum est et consequat. Integer ante nulla, egestas fringilla lectus eu, vehicula convallis tellus. Nulla tempus venenatis consequat.</p>
-										<p>Suspendisse in luctus enim. Proin id sollicitudin nulla, sit amet sodales libero. Aenean aliquam nibh vitae elementum faucibus. Etiam sed neque molestie, elementum lorem ut, sagittis leo. Sed placerat nec dui at vehicula. Donec dignissim justo ex, non sollicitudin enim condimentum in. Maecenas ornare diam ut hendrerit porttitor. Nulla facilisi.</p>
-										<p>Nam imperdiet odio quis eleifend euismod. Aliquam pulvinar, nisl et pharetra auctor, libero metus luctus metus, nec venenatis elit est at magna. Maecenas quis posuere arcu. Curabitur posuere, nisi at consequat gravida, nisi ipsum efficitur metus, sed condimentum lectus enim nec quam. Maecenas a sagittis sem, quis porttitor libero. Duis consequat, eros at consectetur posuere, libero ipsum finibus nunc, nec molestie orci augue non quam. Ut eu leo id nisi fermentum sodales et non mauris. Nunc nisi dolor, convallis eu pulvinar a, consequat sit amet lacus. Nullam facilisis vestibulum nisi sed ultrices.</p>
+	                					<%= yield %>
 	            				  	</figure>
 	    						</div>
 	          			  	</div>
@@ -72,42 +63,44 @@
 			</div>
 		</div>
 	</div>
-	<footer class="footer">
-    	<div class="container-fluid">
-        	<div class="row">
-            	<div class="col-xxs-10 col-xxs-push-1 col-sm-12 col-sm-push-0">
-                	<a href="" title="Home" class="footer__logo">LOGO HERE</a>
-            	</div>
-       	 	</div>
-        	<div class="row">
-            	<nav class="col-xxs-8 col-xxs-push-2 col-sm-12 col-sm-push-0">
-                	<ul class="list-unstyled footer__nav">
- 						<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #1</a></li> 
-						<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #2</a></li>
-						<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #3</a></li>                      
-						<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #4</a></li> 
-						<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #5</a></li>
-						<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #6</a></li>
-					</ul>
-            	</nav>
-        	</div>
-    	</div>
-    	<div class="container-fluid">
-        	<div class="row">
-            	<nav class="col-xxs-10 col-xxs-push-1 col-sm-6 col-sm-push-0 footer__subnav-container">
-                	<ul class="list-unstyled footer__subnav">
- 					   <li><a href="" class="footer__subnav-link">Submenu #1</a></li>                      
-					   <li><a href="" class="footer__subnav-link">Submenu #2</a></li>                      
-					   <li><a href="" class="footer__subnav-link">Submenu #3</a></li>
-				    </ul>
-            	</nav>
-            	<div class="col-xxs-10 col-xxs-push-1 col-sm-6 col-sm-push-0">
-                	<small class="footer__legal">© 2017 Company name</small>
-            	</div>
-        	</div>
-    	</div>
-		<a href="#" title="Close Navigation" class="offcanvas__close offcanvas--showhide"></a>
-	</footer>
+	<div class="footerWrap">
+		<footer class="footer">
+	    	<div class="container-fluid">
+	        	<div class="row">
+	            	<div class="col-xxs-10 col-xxs-push-1 col-sm-12 col-sm-push-0">
+	                	<a href="" title="Home" class="footer__logo">LOGO HERE</a>
+	            	</div>
+	       	 	</div>
+	        	<div class="row">
+	            	<nav class="col-xxs-8 col-xxs-push-2 col-sm-12 col-sm-push-0">
+	                	<ul class="list-unstyled footer__nav">
+	 						<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #1</a></li> 
+							<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #2</a></li>
+							<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #3</a></li>                      
+							<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #4</a></li> 
+							<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #5</a></li>
+							<li class="col-xxs-12 col-sm-2"><a href="" class="footer__nav-link">MENU #6</a></li>
+						</ul>
+	            	</nav>
+	        	</div>
+	    	</div>
+	    	<div class="container-fluid">
+	        	<div class="row">
+	            	<nav class="col-xxs-10 col-xxs-push-1 col-sm-6 col-sm-push-0 footer__subnav-container">
+	                	<ul class="list-unstyled footer__subnav">
+	 					   <li><a href="" class="footer__subnav-link">Submenu #1</a></li>                      
+						   <li><a href="" class="footer__subnav-link">Submenu #2</a></li>                      
+						   <li><a href="" class="footer__subnav-link">Submenu #3</a></li>
+					    </ul>
+	            	</nav>
+	            	<div class="col-xxs-10 col-xxs-push-1 col-sm-6 col-sm-push-0">
+	                	<small class="footer__legal">© 2017 Company name</small>
+	            	</div>
+	        	</div>
+	    	</div>
+			<a href="#" title="Close Navigation" class="offcanvas__close offcanvas--showhide"></a>
+		</footer>
+	</div>
     
 	<%= javascript_include_tag 'footer', 'data-turbolinks-track' => true %>
 </body>
