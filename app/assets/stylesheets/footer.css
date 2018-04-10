@@ -110,8 +110,9 @@
 
 .footer .main-content .nl_input-wrapper .submit-button {
     position: relative;
-    width: 5em;
-    height: 3.1em;
+    width: 3.5em;
+    height: 1.83em;
+	margin-top:0px;
     background-color: #000;
     border-top: 1px solid #fff;
     border-right: 1px solid #fff;

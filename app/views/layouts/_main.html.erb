@@ -1,40 +1,21 @@
 <body class="">
     <div class="offcanvas__container offcanvas--trigger">
-    	<nav id="nav" class="navbar navbar-default navbar-absolute-top navbar-fixed-top" role="navigation" style="top: 0px;">
-   			<div class="visible-md visible-lg">
-        		<a href="#" title="Home" class="navbar-header">LOGO HERE</a>
-        	 	<div id="navbar" class="navbar-collapse collapse">
-            		<ul class="nav navbar-nav">
-	         			<li class=""><a href="">Menu #1</a></li>
-	            		<li class=""><a href="">Menu #2</a></li>
-	            		<li class=""><a href="">Menu #3</a></li>
-	            		<li class=""><a href="">Menu #4</a></li>
-	            		<li class=""><a href="">Menu #5</a></li>
-					</ul>
-            		<div class="navbar-right">
-            			<ul class="nav navbar-nav navbar-login">
-                    		<li class="paddmysides"><span>Logged in as<br/></span>NAME</li>
-                    		<li><a href="" class="btn btn-default">CMS</a></li>
-                		</ul>
-       	 			</div>
-        		</div>
-    		</div>
-			<div class="visible-xxs visible-xs visible-sm">
-        		<div class="navbar navbar-default " role="navigation">
-            		<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navbar-collapse">
-						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> 
-					</button>
-					<a href="" title="Home" class="navbar-header">LOGO HERE</a>
+    	<nav id="nav" class="navbar" role="navigation" style="top: 0px;">
+			<div class="visible-md visible-lg visible-xxs visible-xs visible-sm">
+        		<div class="navbar navbar-default" role="navigation">
+            		<!-- <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navbar-collapse">
+						<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> -->
+					<%= image_tag("banner.png", class: "navbar-center") %>
         		</div>
     		</div>
 		</nav>
-		<div class="col-xs-6 col-sm-3 sidebar-offcanvas navbar-collapse offcanvas--showhide" id="sidebar" role="navigation">
-    		<div class="visible-xxs visible-xs visible-sm">
+		<div class="col-xs-6 col-sm-3 col-md-3 sidebar-offcanvas navbar-collapse offcanvas--showhide" id="sidebar" role="navigation">
+    		<div class="">
         		<div class="row">
             		<div class="sidebar-nav">
-               		<a href="" title="Home" class="navbar-header">LOGO HERE</a>
             		<ul class="nav navbar-nav">
-	         			<li class=""><a href="">Menu var(--black-color)</a></li>
+	         			<li class=""><a href="">Menu #1</a></li>
 	            		<li class=""><a href="">Menu #2</a></li>
 	            		<li class=""><a href="">Menu #3</a></li>
 	            		<li class=""><a href="">Menu #4</a></li>
@@ -51,7 +32,7 @@
 					<section class="news__container">
 	    				<div class="container-fluid">
 	       					<div class="row">
-	              			  	<div class="col-xxs-10 col-xxs-push-1 col-sm-12 col-sm-push-0">
+	              			  	<div class="col-xxs-12 col-sm-12 col-sm-push-0">
 	      							<figure class="new__item news__item--push-down">
 	                					<%= yield %>
 	            				  	</figure>
@@ -62,8 +43,6 @@
 				</article>
 			</div>
 		</div>
-	</div>
-	<div class="footerWrap">
 		<%= render 'layouts/footer' %>
 	</div>
 	<%= javascript_include_tag 'footer', 'data-turbolinks-track' => true %>

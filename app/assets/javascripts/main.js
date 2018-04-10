@@ -1129,23 +1129,6 @@ function(e, t) {
 }(jQuery, ResponsiveBootstrapToolkit),
 function(e, t) {
     "use strict";
-    TEMPLATEapp.EmbedTweet = function() {
-        function n() {
-            e("div[embed-tweet]").each(function(n, i) {
-                var a = e(i).attr("embed-tweet").replace(/.+[\/]([0-9]+)$/, "$1");
-                t.widgets.createTweet(a, i)
-            })
-        }
-        var i;
-        return i = function() {
-            n()
-        }, {
-            init: i
-        }
-    }(), e("div[embed-tweet]").length > 0 && TEMPLATEapp.EmbedTweet.init()
-}(jQuery, twttr),
-function(e, t) {
-    "use strict";
     TEMPLATEapp.Troubleshooter = function() {
         function t() {
             f.on("click", function(t) {

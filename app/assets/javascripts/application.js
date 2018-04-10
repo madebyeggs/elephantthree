@@ -49,13 +49,28 @@ $(document).ready(function(){
 		});
 	});
 	
-	var classHighlight = 'highlight';
-	$("li:first").addClass(classHighlight); 
-	var $thumbs = $('li').click(function(e) {
-	    e.preventDefault();
-	    $thumbs.removeClass(classHighlight);
-	    $(this).addClass(classHighlight);
-	});
+	// var classHighlight = 'highlight';
+// 	$("li:first").addClass(classHighlight);
+// 	var $thumbs = $('li').click(function(e) {
+// 	    e.preventDefault();
+// 	    $thumbs.removeClass(classHighlight);
+// 	    $(this).addClass(classHighlight);
+// 	});
+
+	// When the user scrolls the page, execute myFunction 
+	window.onscroll = function() {myFunction()};
+	// Get the header
+	var header = document.getElementById("nav");
+	// Get the offset position of the navbar
+	var sticky = header.offsetTop;
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function myFunction() {
+	  if (window.pageYOffset >= sticky) {
+	    header.classList.add("sticky");
+	  } else {
+	    header.classList.remove("sticky");
+	  }
+	}
 	
 
 	$('#myTabs a').click(function (e) {

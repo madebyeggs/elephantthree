@@ -13,5 +13,9 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	
 </head>
-	<%= render 'layouts/main' %>
+	<% if controller_name == "admins" %>
+		<%= render 'layouts/alternative' %>
+	<% else %>
+		<%= render 'layouts/main' %>
+	<% end %>
 </html>
