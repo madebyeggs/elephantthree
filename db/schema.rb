@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181106192208) do
+ActiveRecord::Schema.define(version: 20181106192502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,25 @@ ActiveRecord::Schema.define(version: 20181106192208) do
   end
 
   add_index "announcements", ["slug"], name: "index_announcements_on_slug", unique: true, using: :btree
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "soundcloud"
+    t.string   "fb_url"
+    t.string   "twitter_name"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "fb_image_file_name"
+    t.string   "fb_image_content_type"
+    t.integer  "fb_image_file_size"
+    t.datetime "fb_image_updated_at"
+    t.integer  "row_order"
+  end
 
   create_table "clogos", force: :cascade do |t|
     t.datetime "created_at",         null: false
