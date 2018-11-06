@@ -51,6 +51,8 @@ h2 {color: var(--black-color)!important;}
 .iframe {width:100%; margin-left:0%;}
 footer {padding-top:203px!important;}
 
+#section1 {display:inline-block;}
+
 @media (max-width:769px) {
     .iframe {width:100%; margin:0%; padding:0px; border: none;}
 	footer {padding-top:563px!important;}
