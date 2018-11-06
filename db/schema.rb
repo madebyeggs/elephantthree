@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306100218) do
+ActiveRecord::Schema.define(version: 20181106171253) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "announcements", force: :cascade do |t|
     t.text     "slide_title"
@@ -45,12 +48,28 @@ ActiveRecord::Schema.define(version: 20180306100218) do
     t.string   "nlsubtitle"
   end
 
-  add_index "announcements", ["slug"], name: "index_announcements_on_slug", unique: true
+  add_index "announcements", ["slug"], name: "index_announcements_on_slug", unique: true, using: :btree
 
   create_table "compositonlogos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "customvideos", force: :cascade do |t|
+    t.text     "description"
+    t.string   "work_brand_name"
+    t.string   "work_campaign_title"
+    t.string   "platform"
+    t.string   "vimeo"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "row_order"
+    t.string   "slug"
+    t.integer  "showreelposition"
+    t.boolean  "showreel"
+  end
+
+  add_index "customvideos", ["slug"], name: "index_customvideos_on_slug", unique: true, using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -60,10 +79,46 @@ ActiveRecord::Schema.define(version: 20180306100218) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string   "title1"
+    t.string   "title2"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "website"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "downloadlink"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "mainimage_file_name"
+    t.string   "mainimage_content_type"
+    t.integer  "mainimage_file_size"
+    t.datetime "mainimage_updated_at"
+  end
+
+  create_table "showreels", force: :cascade do |t|
+    t.text     "description"
+    t.string   "work_brand_name"
+    t.string   "work_campaign_title"
+    t.string   "platform"
+    t.string   "vimeo"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "row_order"
+    t.string   "slug"
+    t.integer  "showreelposition"
+    t.boolean  "showreel"
+  end
+
+  add_index "showreels", ["slug"], name: "index_showreels_on_slug", unique: true, using: :btree
 
   create_table "slides", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -85,8 +140,8 @@ ActiveRecord::Schema.define(version: 20180306100218) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "works", force: :cascade do |t|
     t.string   "brand_name"
@@ -129,6 +184,6 @@ ActiveRecord::Schema.define(version: 20180306100218) do
     t.string   "nlsubtitle"
   end
 
-  add_index "works", ["slug"], name: "index_works_on_slug", unique: true
+  add_index "works", ["slug"], name: "index_works_on_slug", unique: true, using: :btree
 
 end

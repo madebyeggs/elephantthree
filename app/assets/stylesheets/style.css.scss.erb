@@ -20,7 +20,7 @@ a, a:hover, a:visited {text-decoration:none;color:#ffffff!important;}
 .csvInput {float:left;margin:20px 0px 25px -155px;}
 .csvInput2 {float:left;margin:20px 0px 25px 0px;}
 .csvInput3 {float:left;margin:20px 0px 25px 12px;}
-.csvInput4 {float:left;margin:20px 0px 25px -155px;}
+.csvInput4 {float:left;margin:20px 0px 25px 0px;}
 .marginCsv {margin:-10px 0px 0px 0px;}
 .marginCsv2 {margin:-10px 0px 0px 0px;}
 .inline {float:left;}
@@ -30,18 +30,6 @@ th:after {
     display: block;
     line-height: 16px;
     color: transparent;
-}
-@font-face {
-    font-family: 'scapescape';
-    src:font-url('scape_copy-webfont.eot');
-    src:font-url('scape_copy-webfont.eot?#iefix') format('embedded-opentype'),
-        font-url('scape_copy-webfont.woff2') format('woff2'),
-        font-url('scape_copy-webfont.woff') format('woff'),
-        font-url('scape_copy-webfont.ttf') format('truetype'),
-        font-url('scape_copy-webfont.svg#scapescape') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
 }
 @font-face {
   font-family: 'SplitCustomGotham';
@@ -138,6 +126,8 @@ th:after {
     transform: translate(-50%, -48%);
 	z-index:2000000;
 }
+.imageMobile {display:none;}
+.imageFull {width:100%;} .imageFull img {max-width:100%;}
 .halfHeight {height:50%;background-color:#ff0000;}
 .bespokeHeader {text-transform:uppercase;font-family:'SplitCustomGotham';font-weight:100;font-size:40px;line-height:35px;}
 .bespokeHeaderUnder {font-style:italic;font-family:'SplitCustomMrsEaves';font-weight:100;font-size:20px;margin-top:-25px;line-height:20px;}
@@ -162,16 +152,12 @@ li.navButton {font-size:14px!important;text-transform:uppercase!important;font-s
 .logo3 {width:210px!important;margin:20px auto 40px auto;}
 .logo img, .logo2 img, .logo3 img {max-width:100%;margin:0 auto;}
 ul.navigation, ul.navigation2 {list-style-type: none;}
-.navigationWrapper {width:122px;margin:6rem auto;}
-.navigation2, .navigation {margin:24px 0px 0px -41px;text-align:center;}
-.navigation a, .navigation2 a, .client {
-	text-transform:uppercase;
-	font-size:1.2em!important;
-	color:#ffffff;
-	font-family:"SplitCustomGotham";
-}
+.navigationWrapper {width:280px;margin:6rem auto;text-align:center;}
+.navigation {margin-left:-47px;}
+.navigation2 {margin:24px 0px 0px -35px;text-align:center;}
+.navigation a, .navigation2 a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
 li.navButton {margin:8px 0px 8px 0px!important;}
-.social, .social2 {width:114px;margin:1rem auto 0px auto;}
+.social, .social2 {width:193px;margin:1rem auto 0px auto;text-align:center;}
 .centerSocial {margin:0 auto;}
 .pipe {font-weight:700;margin:0px 8px 0px 4px;color:#ffffff;}
 
@@ -246,26 +232,12 @@ html, body {
 }
 .slideTitle {
 	width:210px;
-	height:130px;
+	height:180px;
 	position:absolute;
 	z-index:1000;
-	top:125px;
 	right:14%;
-	font-size:18px;
-	line-height:20px;
 	background-color:rgba(0,0,0,0.4);padding:10px;
 }
-.slideTitle:hover {background-color:rgba(0,0,0,1);}
-.slideTitle h5 {
-	padding:0px 10px 10px 10px;
-	margin-top:-5px;
-	font-size:14px!important;
-	text-transform:uppercase!important;
-	font-style:none!important;
-	font-weight:normal!important;
-}
-.bigger {font-size:15px;text-align:left;}
-.bigger2 {font-size:14px;text-align:left;}
 .slide-up
 {
     top: 125px !important;
@@ -275,6 +247,18 @@ html, body {
 {
     bottom: 0px !important;
 }
+.slideTitle:hover {background-color:rgba(0,0,0,1);}
+.slideTitle h5 {
+	padding: 10px;
+	text-align:left!important;
+	font-size: 16px !important;
+	text-transform: uppercase !important;
+	font-weight:normal;
+	vertical-align:middle;
+	display: table-cell;
+}
+.bigger {font-size:15px;text-align:left;}
+.bigger2 {font-size:14px;text-align:left;}
 .mobile {display:none;}
 .thumb {width:225px}
 .thumb2 {width:100px}
@@ -291,6 +275,8 @@ li.researchNavButton {text-transform:lowercase!important;padding-top:20px;}
 /*MOBILE*/
 
 @media (max-width: 992px) {
+	
+	.imageMobile {display:inline;}
 	
 	body {height:100vh;overflow-y: scroll;}
 	.slideTitle {
@@ -320,5 +306,13 @@ li.researchNavButton {text-transform:lowercase!important;padding-top:20px;}
 	.artistInfo, .workInfo {width:80%;margin:10px 10%;padding:2px 0px 40px 0px;}
 	.desktop {display:none;}
 	.mobile {display:block;}
+	.main {display:none;}
 	
 }
+.border-right {border-right:1px solid white;height:100vh;}
+.push {background-color:none;position:absolute;top:10px;right:10px;z-index:4000000000;}
+#rightpanel2 {position:absolute;width:300px;height:100%;right:0;top:0;z-index:4000000000;background-color:black;display:none;}
+.center {display: block;width: 60%;margin:60px auto;}
+ul.composition {list-style-type: none;width:85%;margin-top:60px;}
+ul.composition li {text-align:center;font-family:'SplitCustomGotham';font-weight:100;font-size:20px;}
+#tabs {float:left;clear:both;}

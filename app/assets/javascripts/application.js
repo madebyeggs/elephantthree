@@ -18,12 +18,18 @@
 //= require jquery_ujs
 //= require jquery-ui/sortable
 //= require jquery-ui/effect-highlight
+//= require jquery-ui/tabs
 //= require turbolinks
 //= require nprogress
 //= require nprogress-turbolinks
 //= require lazyload
+//= require update_artists_row_order
 //= require update_works_row_order
+//= require update_releases_row_order
 //= require update_announcements_row_order
+//= require update_customs_row_order
+//= require update_researches_row_order
+//= require update_showreels_row_order
 //= require jquery.slicknav
 //= require jquery.prettySocial
 //= require imagesloaded
@@ -36,6 +42,7 @@
 //= require plyr
 //= require iscroll
 //= require drawer
+//= require jquery.jplayer.js
 
 $(document).ready(function(){
 	
@@ -154,18 +161,28 @@ $(document).ready(function(){
 	if ($(window).width() < 992) {
 		$('.videoDesktop').hide();
 		$('.videoMobile').show();
-		$('.drawer-toggle').show();
 	}
 	else {
 	   	$('.videoDesktop').show();
 		$('.videoMobile').hide();
-		$('.drawer-toggle').hide();
 	}
+	
+	$("a.push").click(function() {
+		$("#rightpanel2").toggle( "slide" );
+       	return false;
+    }); 
+	
+	$( "#tabs" ).tabs();
 	
 });
 $(function() {
 	$("#works_search input").keyup(function(e) {
     	$.get($("#works_search").attr("action"), $("#works_search").serialize(), null, "script");
+    	return false;
+		e.PreventDefault()
+  	});
+	$("#releases_search input").keyup(function(e) {
+    	$.get($("#releases_search").attr("action"), $("#releases_search").serialize(), null, "script");
     	return false;
 		e.PreventDefault()
   	});

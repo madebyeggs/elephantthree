@@ -1,0 +1,55 @@
+<div class="canScroll">	
+	<div class="parent2">
+		<%#= image_tag(@mainshowreel.image, :lazy => true, class: "lazy child-image2 customSquareImage") %>
+		<%= image_tag('logoNoLetters.png', class: "logo center") %>
+	</div>
+	<div class="customInfo">
+		<div class="videosWrapper">
+			<div class="videoPositionFix">
+				<% @sorted_showreelvideos.each do |showreel| %>
+					<div class="responsiveVideo frame_container">
+						<div class="videoMaster">
+							<div class="videoContainer">
+								<h1 class="artistName titleSize1 customVideoTitle customVideoTitleOveride">
+									<%= showreel.work_brand_name %> "<%= showreel.work_campaign_title %>"
+								</h1>
+								<div class="plyr js-player">
+					    			<div data-video-id="<%= showreel.vimeo %>" data-type="<%= showreel.platform %>"></div>
+								</div>
+								<p class="customVideoDescription">
+								  <% if showreel.description.length > 150 %>
+								    <%= truncate(showreel.description, length: 150) %>
+								    <%#= link_to 'more', '', class: "read-more-#{showreel.id} blue" %>
+								    <!--<script>
+								      $('.read-more-<%= showreel.id %>').on('click', function(e) {
+								        e.preventDefault()
+										  $(this).parent().html('<%= escape_javascript showreel.description %>');
+										  $(this).parent().parent().css('height:500px;');
+								      })
+								    </script>-->
+								  <% else %>
+								    <%= showreel.description %>
+								  <% end %>
+								<p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	if ($(window).width() < 992) {
+		$('.customVideoDesktop').hide();
+		$('.customSoundcloudDesktop').hide();
+		$('.customVideoMobile').show();
+		$('.customSoundcloudMobile').show();
+	}
+	else {
+	   	$('.customVideoDesktop').show();
+		$('.customSoundcloudDesktop').show();
+		$('.customVideoMobile').hide();
+		$('.customSoundcloudMobile').hide();
+	}
+</script>

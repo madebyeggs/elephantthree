@@ -25,12 +25,6 @@
 	background-color:#ff0000;color:#fff;font-family:"SplitCustomGotham";width:320px;height:48px;text-align:center;text-transform:uppercase;padding-top:12.5px;
 	display:none;
 }
-
-.projectlist a:hover { 
-	cursor: url('	'), crosshair;
-	cursor: url(<%= asset_path 'more.png' %>) 40 40, crosshair;
-}
-
 .projectlist a:hover .projectinfo { 
 	background: #202326; 
 	-webkit-transition: background .25s linear;
@@ -54,6 +48,8 @@
 	-moz-transition: opacity .25s ease-in-out;
 	-webkit-transition: opacity .25s ease-in-out;
 }
+
+.drawer-toggle {position:absolute!important;z-index:10000000000!important;}
 
 .customName {text-align:left;margin:30px 0px 22px 0px;}
 .customSeparator {color:#ffffff; margin:54px 5%;width:90%;}
@@ -125,8 +121,8 @@
 .subMenu p {margin:0;}
 .videosWrapper {width:97.5%;}
 .videoPositionFix {margin-left:5%;margin-top:-36px;}
-.responsiveVideo {width:31%;display:inline-block;float:left;}
-.responsiveVideo:nth-child(2) {margin-left:2%;margin-right:2%;}
+.responsiveVideo, .responsiveVideo3 {width:31%;display:inline-block;float:left;}
+.responsiveVideo:nth-child(3n+2) {margin-left:2%;margin-right:2%;}
 .responsiveVideo2 {width:100%;}
 .frame_container {position:relative;}
 .no-js .loading {display: none;}
@@ -136,7 +132,14 @@
 .customLogo img {max-width:100%;}
 .customLinks {position:absolute;margin:0px 1.5px -30px 1.5px;}
 .customSocialLinks {font-size:20px!important;margin-right:-5px;}
-.customTitle {letter-spacing:2px;text-align:center;margin-bottom:54px;margin-top:-30px;}
+.customTitle {
+	text-transform:uppercase;
+	font-family:'SplitCustomGotham';font-weight:100;font-size:25px;
+	line-height:20px;
+	text-align:left;
+	padding-bottom:24px!important;margin-top:-10px!important;
+	text-align:center;margin-bottom:54px;margin-top:-30px;
+}
 .parent2, .parent3 {position:relative;}
 .child2 {
 	padding:0px 10px;
@@ -155,8 +158,6 @@
 .customBtn {
   	display:inline-block;
   	text-align:center;
-  	cursor:url('	'), crosshair;
-	cursor:url(<%= asset_path 'more.png' %>) 40 40, crosshair;
   	border:2px solid white;
   	padding-top:44px;
   	font-size:18px;
@@ -175,9 +176,21 @@
 }
 .belowTheFold {display:inline-block;width:90%;margin:0 5%;}
 .aboutWrapper {width:40%;float:left;}
-.customTitleAbout {letter-spacing:2px;text-align:left;margin-bottom:24px;margin-top:-10px;}
+.customTitleAbout {
+	text-transform:uppercase;
+	font-family:'SplitCustomGotham';font-weight:100;font-size:25px;
+	line-height:20px;
+	text-align:left;
+	margin-bottom:34px;margin-top:-10px;
+}
 .listenWrapper {width:60%;padding-left:54px;float:right;}
-.customTitleListen {letter-spacing:2px;text-align:left;margin-bottom:24px;margin-top:-10px;}
+.customTitleListen {
+	text-transform:uppercase;
+	font-family:'SplitCustomGotham';font-weight:100;font-size:25px;
+	line-height:20px;
+	text-align:left;
+	margin-bottom:34px;margin-top:-10px;
+}
 .nav-tabs{
   background-color:none;
 }
@@ -200,7 +213,7 @@
 }
 .customBtn {width:100%;}
 .noBackground {background-color:#000000!important;font-size:18px;font-style:italic;}
-.brandingTile {position:relative;height:50vh;}
+.brandingTile {position:relative;height:50vh;background-color:black;}
 .brandingLogo {
 	width:197px;
 	position: relative;
@@ -245,7 +258,7 @@
 @media (max-width: 767px) {
 	.customInfo {width:95%;margin:34px 2.5%;padding:2px 0px 0px 0px;}
 	.belowTheFold {width:100%;margin:0!important;padding:0!important;}
-	.customTitle {margin-bottom:24px;}
+	.customTitle {display:none;}
 	.videoPositionFix {width:100%;margin:0% 1%;}
 	.responsiveVideo {width:100%;display:inline-block;margin:6px 0px;}
 	.responsiveVideo:nth-child(2), .responsiveVideo:nth-child(3)  {display:none;}

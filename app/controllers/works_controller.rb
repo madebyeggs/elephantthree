@@ -55,7 +55,7 @@ class WorksController < ApplicationController
         card: "summary_large_image",
         site: "@Elephant__Music",
         title: "Elephant Music | Placements",
-        description: "21st Century Music Publishing | Unique Music to Picture"
+        description: "Unique Music to Picture"
       }
     end
     
@@ -66,11 +66,11 @@ class WorksController < ApplicationController
         image: "#{@work.fb_image}",
         title: "#{@work.campaign_title}",
         description: "#{@work.description}",
-        type: "musician"
+        type: "placement"
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
-        site: "@Elephant__Music",
+        site: "@fairsplitmusic",
         title: "#{@work.campaign_title}",
         description: "#{@work.description}",
         image: "#{@work.fb_image}"

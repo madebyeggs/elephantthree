@@ -1,12 +1,30 @@
 class Work < ActiveRecord::Base
   
   extend FriendlyId
-  friendly_id :brand_name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   include Filterable
   
-  require "addressable/uri"
-  
   require 'csv'
+  
+  def slug_candidates
+    if self.brand_name    
+      [
+        :brand_name, 
+        [:brand_name, :campaign_title],
+      ]
+    else
+      :brand_name
+    end
+  end
+  
+  def remake_slug
+    self.update_attribute(:slug, nil)
+    self.save!
+  end
+  
+  def should_generate_new_friendly_id?
+    new_record? || self.slug.nil?
+  end
   
   def self.import(file)
     CSV.foreach(file.path, headers:true) do |row|
@@ -15,21 +33,6 @@ class Work < ActiveRecord::Base
       work.save!
     end
   end
-  
-  def self.import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      listing_hash = {:brand_name => row['brand_name'], :campaign_title => row['campaign_title'], :agency => row['agency'],
-      :track_name => row['track_name'], :artist_name => row['artist_name'], :description => row['description'], :vimeo => row['vimeo'],
-      :platform => row['platform'], :slideshow => row['slideshow'], :slide_title => row['slide_title'], :image => URI.parse(row['image_url']), 
-      :fb_image => URI.parse(row['fb_image_url']), :slide_image => URI.parse(row['slide_image_url'])}
-      listing = Work.where(id:listing_hash["id"])
-      if listing.count > 0
-        Work.first.update_attributes(listing_hash)
-      else
-        Work.create!(listing_hash)
-      end # end if !product.nil?
-    end # end CSV.foreach
-  end # end self.import(file)
   
   include RankedModel
   ranks :row_order
@@ -63,7 +66,7 @@ class Work < ActiveRecord::Base
     :url => ':s3_alias_url',
     :s3_host_alias => 'dpyn2hq0qgwcx.cloudfront.net', 
     :bucket => 'elephant-two',
-    :path => "works/hero_images/:id_partition/:style/:filename"
+    :path => "works/images/:id_partition/:style/:filename"
   end
   
   # Validate the attached image is image/jpg, image/png, etc

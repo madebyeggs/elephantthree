@@ -86,6 +86,4 @@ Rails.application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
-  
-  ENV["DATABASE_URL"] = "postgres://rwizfzorovtxra:f1605db478c276581b6650e6672a5a232da683032b95074f99deb042554f23f5@ec2-54-83-203-198.compute-1.amazonaws.com:5432/d8a57bsrkdtjr3"
 end

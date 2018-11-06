@@ -12,14 +12,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>2017 E.O.Y. Newsletter</title>
+        <title>2018 E.O.Y. Newsletter</title>
 		<%= stylesheet_link_tag 'newsletter' %>
 	</head>
     <body>
    		<!--*|IF:MC_PREVIEW_TEXT|*-->
     	<!--[if !gte mso 9]><!---->
 		<span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; 
-		overflow:hidden; visibility:hidden; mso-hide:all;">2017 Newsletter</span>
+		overflow:hidden; visibility:hidden; mso-hide:all;">2018 Newsletter</span>
 		<!--<![endif]-->
     	<!--*|END:IF|*-->
     	<center>
@@ -271,132 +271,10 @@
           							</tr>
       							</tbody>
 							</table>
-							<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
-  								<tbody class="mcnDividerBlockOuter">
-      								<tr>
-          								<td class="mcnDividerBlockInner" style="min-width:100%; padding:18px;">
-              								<table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" 
-										style="min-width: 100%;border-top: 2px none #EAEAEA;">
-                  								<tbody>
-												<tr>
-                      									<td>
-                          									<span></span>
-                      									</td>
-                  									</tr>
-              									</tbody>
-										</table>
-          								</td>
-      								</tr>
-  								</tbody>
-							</table>
-							<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-  								<tbody class="mcnTextBlockOuter">
-      								<tr>
-          								<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-                 							<!--[if mso]>
-                  						<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                  						<tr>
-                  						<![endif]-->
-                 							<!--[if mso]>
-                  						<td valign="top" width="600" style="width:600px;">
-                  						<![endif]-->
-              								<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" 
-										width="100%" class="mcnTextContentContainer">
-                  								<tbody>
-												<tr>
-                      									<td valign="top" class="mcnTextContent" style="padding: 0px 18px 0px 18px; font-style: normal; 
-													font-weight: bold; line-height: 150%; text-align: center;">
-                      										<h1 class="null" style="text-align: center;"><%= @first_newsletter.title2.upcase %></h1>
-													</td>
-                  									</tr>
-              									</tbody>
-										</table>
-					                    <!--[if mso]>
-					                   	</td>
-					                    <![endif]-->
-					                    <!--[if mso]>
-					                    </tr>
-					                    </table>
-					                    <![endif]-->
-          								</td>
-      								</tr>
-  								</tbody>
-							</table>
-							<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
-  								<tbody class="mcnDividerBlockOuter">
-      								<tr>
-          								<td class="mcnDividerBlockInner" style="min-width:100%; padding:18px;">
-              								<table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" 
-										style="min-width: 100%;border-top: 2px none #EAEAEA;">
-                  								<tbody>
-												<tr>
-                      									<td>
-                          									<span></span>
-                      									</td>
-                  									</tr>
-              									</tbody>
-										</table>
-          								</td>
-      								</tr>
-  								</tbody>
-							</table>
 						</table>
 	      			</td>
 				</tr>
-				<tr>
-					<td valign="top" id="templateHeader"><table border="0" cellpadding="0" cellspacing="0" width="100%" 
-					class="mcnTextBlock" style="min-width:100%;">
-						<tbody class="mcnTextBlockOuter">
-	  						<tr>
-	      						<td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-	        						<!--[if mso]>
-									<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-									<tr>
-									<![endif]-->
-   
-									<!--[if mso]>
-									<td valign="top" width="600" style="width:600px;">
-									<![endif]-->
-	          						<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" 
-									width="100%" class="mcnTextContentContainer">
-	              						<tbody>
-											<tr>
-	                  							<td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; 
-												padding-bottom:9px; padding-left:18px;">
-													<% @newsletters_releases.each do |nl| %>
-														<div class="tiny">
-	                    									<p class="noGap">
-																<%= nl.title %>
-																<span style="float:right;font-size:10px;">
-																	<a style="text-decoration:none;" href="<%= nl.downloadlink %>">download</a>
-																</span>
-															</p>
-														</div>
-													<% end %>
-													<div class="tiny">
-                    									<p>
-															<div style="width:100%;font-size:16px;text-align:center;margin-bottom:-36px;">
-																<a style="text-decoration:none;" href="<%= @first_newsletter.downloadlink %>">DOWNLOAD ALL</a>
-															</div>
-														</p>
-													</div>
-	                  							</td>
-	              							</tr>
-	          							</tbody>
-									</table>
-									<!--[if mso]>
-									</td>
-									<![endif]-->
-         
-									<!--[if mso]>
-									</tr>
-									</table>
-									<![endif]-->
-	      						</td>
-	  						</tr>
-						</tbody>
-					</td>
-				</tr>
+				
 		       	<tr>
 		        	<td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" 
 					class="mcnFollowBlock" style="min-width:100%;">
@@ -446,7 +324,7 @@
 			                                                                              										<td align="center" 
 																																valign="middle" width="24" 
 																																class="mcnFollowIconContent">
-			                                                                                  										<a href="https://www.facebook.com/fairsplitmusic/" target="_blank"><img src="./assets/fb.png" style="display:block;" height="24" width="24" class="">
+			                                                                                  										<a href="https://www.facebook.com/Elephantmusicglobal" target="_blank"><img src="./assets/fb.png" style="display:block;" height="24" width="24" class="">
 																																	</a>
 			                                                                              										</td>
 			                                                                          										</tr>
@@ -482,7 +360,7 @@
 																																valign="middle" width="24" 
 																																class="mcnFollowIconContent">
 		                                                                                											<a 
-																												href="https://twitter.com/fairsplitmusic?lang=en" target="_blank"><img src="./assets/twit.png" style="display:block;" height="24" width="24" class="">
+																												href="https://twitter.com/Elephant__Music" target="_blank"><img src="./assets/twit.png" style="display:block;" height="24" width="24" class="">
 																																	</a>
 		                                                                            											</td>
 		                                                                        											</tr>
@@ -517,7 +395,7 @@
 				                                                                              										<td align="center" 
 																																	valign="middle" width="24" 
 																																	class="mcnFollowIconContent">
-				                                                                                  										<a href="https://www.instagram.com/fairsplitmusic/" target="_blank"><img src="./assets/insta.png" style="display:block;" height="24" width="24" class="">
+				                                                                                  										<a href="https://www.instagram.com/vikramgudi/" target="_blank"><img src="./assets/insta.png" style="display:block;" height="24" width="24" class="">
 																																		</a>
 				                                                                              										</td>
 				                                                                          										</tr>
@@ -553,7 +431,7 @@
 																																	valign="middle" width="24" 
 																																	class="mcnFollowIconContent">
 			                                                                                  											<a 
-																															href="http://splitmusic.co.uk/" target="_blank"><img src="./assets/link.png" style="display:block;" height="24" width="24" class="">
+																															href="http://elephantmusic.net/" target="_blank"><img src="./assets/link.png" style="display:block;" height="24" width="24" class="">
 																																		</a>
 			                                                                              											</td>
 			                                                                          											</tr>
