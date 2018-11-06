@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181106181253) do
+ActiveRecord::Schema.define(version: 20181106191547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 20181106181253) do
 
   add_index "announcements", ["slug"], name: "index_announcements_on_slug", unique: true, using: :btree
 
+  create_table "clogos", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.boolean  "randombox"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "compositonlogos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,9 +71,31 @@ ActiveRecord::Schema.define(version: 20181106181253) do
     t.string   "vimeo_1"
     t.string   "vimeo_2"
     t.string   "vimeo_3"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "slug"
+    t.string   "genre"
+    t.integer  "row_order"
+    t.string   "soundcloud"
+    t.text     "fullqual"
+    t.text     "lowqual"
+    t.integer  "Displayposition"
+    t.boolean  "display"
+    t.string   "work_brand_name"
+    t.string   "work_campaign_title"
+    t.string   "work_brand_name2"
+    t.string   "work_campaign_title2"
+    t.string   "work_brand_name3"
+    t.string   "work_campaign_title3"
+    t.boolean  "randombox"
+    t.string   "souncloudtype"
   end
+
+  add_index "customs", ["slug"], name: "index_customs_on_slug", unique: true, using: :btree
 
   create_table "customvideos", force: :cascade do |t|
     t.text     "description"
@@ -75,6 +107,7 @@ ActiveRecord::Schema.define(version: 20181106181253) do
     t.datetime "updated_at",          null: false
     t.integer  "row_order"
     t.string   "slug"
+    t.integer  "custom_id"
     t.integer  "showreelposition"
     t.boolean  "showreel"
   end
@@ -103,7 +136,6 @@ ActiveRecord::Schema.define(version: 20181106181253) do
     t.string   "website"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.string   "downloadlink"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
@@ -112,7 +144,42 @@ ActiveRecord::Schema.define(version: 20181106181253) do
     t.string   "mainimage_content_type"
     t.integer  "mainimage_file_size"
     t.datetime "mainimage_updated_at"
+    t.string   "downloadlink"
   end
+
+  create_table "releases", force: :cascade do |t|
+    t.string   "title"
+    t.string   "soundcloud"
+    t.text     "description"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "fb_image_file_name"
+    t.string   "fb_image_content_type"
+    t.integer  "fb_image_file_size"
+    t.datetime "fb_image_updated_at"
+    t.integer  "row_order"
+    t.string   "slug"
+    t.boolean  "slideshow"
+    t.string   "slide_image_file_name"
+    t.string   "slide_image_content_type"
+    t.integer  "slide_image_file_size"
+    t.datetime "slide_image_updated_at"
+    t.text     "slide_title"
+    t.string   "vimeo"
+    t.text     "slide_title2"
+    t.text     "slide_title3"
+    t.integer  "Slideshowposition"
+    t.boolean  "newsletter"
+    t.integer  "newsletterposition"
+    t.string   "downloadlink"
+    t.string   "platform"
+  end
+
+  add_index "releases", ["slug"], name: "index_releases_on_slug", unique: true, using: :btree
 
   create_table "showreels", force: :cascade do |t|
     t.text     "description"

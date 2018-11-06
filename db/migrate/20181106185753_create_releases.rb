@@ -4,7 +4,6 @@ class CreateReleases < ActiveRecord::Migration
       t.string :title
       t.string :soundcloud
       t.text :description
-
       t.timestamps null: false
     end
   end
