@@ -20,11 +20,7 @@
 	   		<% @sorted_newsletters.each do |nl| %>
      			<tr data-item-id=<%= "" %> class="item">
 					<td>
-						<% if nl.slide_image? %>
-							<%= image_tag(nl.slide_image, class: "thumb3") %>
-						<% else %>
-							<%= image_tag(nl.image, class: "thumb3") %>
-						<% end %>
+						<%= image_tag(nl.image, class: "thumb3") %>
 					</td>
 					<td><%= image_tag(nl.hero, class: "thumb3") %></td>
        				<td><%= best_in_place nl, :nltitle %></td>
