@@ -33,9 +33,11 @@ class ApplicationController < ActionController::Base
     @newsletters_announcement = Announcement.where('newsletter = ?', true)
     @newsletters = [@newsletters_works, @newsletters_announcement].flatten
     @first_newsletter = Newsletter.first
+    @second_newsletter = Newsletter.second
     @sorted_newsletters = @newsletters.sort_by {|nl| [nl.newsletterposition ? 0 : 1,nl.newsletterposition || 0]}
     @first_newsletter_work =  @sorted_newsletters.first
-    @rest_newsletter_works = @sorted_newsletters[1..-1]
+    @second_newsletter_work =  @sorted_newsletters.second
+    @rest_newsletter_works = @sorted_newsletters[2..-1]
     @newsletters_releases = Release.where('newsletter = ?', true).order(:newsletterposition)
   end
   

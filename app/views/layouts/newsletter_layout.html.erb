@@ -230,6 +230,41 @@
           							</tr>
   								</tbody>
 							</table>
+							<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
+  								<tbody class="mcnImageBlockOuter">
+          							<tr>
+              							<td valign="top" style="padding:9px" class="mcnImageBlockInner">
+                  							<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" 
+											class="mcnImageContentContainer" style="min-width:100%;">
+                      							<tbody>
+													<tr>
+                          								<td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; 
+														padding-top: 0; padding-bottom: 0; text-align:center;">
+															<a href=
+															<% if @first_newsletter_work.class.to_s.downcase == 'announcement' %>
+																"<%= slide_path(@second_newsletter_work) %>" 
+															<% else %>
+																"<%= work_path(@second_newsletter_work) %>"
+															<% end %>
+																target="_blank" style="text-decoration:none;">
+																<img align="center" alt="" src="<%= @second_newsletter_work.hero %>" 
+																width="564" style="max-width:610px; padding-bottom: 0; display: inline !important; 
+																vertical-align: bottom;" class="mcnImage">
+																<div style="position:relative;margin:5px 0px 0px 0px;z-index:4;">
+																	<h4 class="small" style="color:black;">
+																		<%= @second_newsletter_work.nltitle %><br/>
+																		<%= @second_newsletter_work.nlsubtitle %><br/>
+																	</h4>
+																</div>
+															</a>
+                                  						</td>
+                      								</tr>
+                  								</tbody>
+											</table>
+              							</td>
+          							</tr>
+  								</tbody>
+							</table>
 							<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageGroupBlock">
   								<tbody class="mcnImageGroupBlockOuter">
           							<tr>
