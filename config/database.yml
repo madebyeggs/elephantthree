@@ -1,17 +1,17 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: V2.5_development
+  database: elephantthree
   pool: 5
-  username: mrehamilton
+  username: ehamilton
   password:
   timeout: 5000
   
 test:
   adapter: postgresql
   encoding: unicode
-  database: V2.5_test
+  database: elephantthree
   pool: 5
-  username: mrehamilton
+  username: ehamilton
   password:
   timeout: 5000
